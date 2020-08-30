@@ -1,0 +1,1 @@
+# jetbrains-ide-json-schema-live-templates
