@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.touchbit.jetbrains.ide</groupId>
+    <artifactId>json-schema-live-templates</artifactId>
+    <name>jetbrains-ide-json-schema-live-templates</name>
+    <version>1.0.0</version>
+
+    <url>https://github.com/shaburov/jetbrains-ide-json-schema-live-templates</url>
+
+    <issueManagement>
+        <url>https://github.com/shaburov/jetbrains-ide-json-schema-live-templates/issues</url>
+        <system>GitHab</system>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://choosealicense.com/licenses/mit/</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:shaburov/jetbrains-ide-json-schema-live-templates.git</connection>
+        <developerConnection>scm:git:git@github.com:shaburov/jetbrains-ide-json-schema-live-templates.git</developerConnection>
+        <url>https://github.com/shaburov/jetbrains-ide-json-schema-live-templates</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>oleg.shaburov</id>
+            <name>Oleg Shaburov</name>
+            <email>shaburov.o.a@gmail.com</email>
+            <roles>
+                <role>Owner</role>
+            </roles>
+            <timezone>+3</timezone>
+        </developer>
+    </developers>
+
+    <properties>
+        <jdk.version>1.8</jdk.version>
+        <encoding>UTF-8</encoding>
+        <maven.compiler.source>${jdk.version}</maven.compiler.source>
+        <maven.compiler.target>${jdk.version}</maven.compiler.target>
+        <file.encoding>${encoding}</file.encoding>
+        <source.encoding>${encoding}</source.encoding>
+        <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
+
+        <junit.report>${project.build.directory}/report/junit-report</junit.report>
+        <jacoco.report>${project.build.directory}/report/jacoco.exec</jacoco.report>
+        <junit.jupiter.version>5.3.1</junit.jupiter.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.7.0-RC1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>3.0.5</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
+                <version>1.10.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>compileTests</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>1.3.1</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>${junit.jupiter.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <useSystemClassLoader>true</useSystemClassLoader>
+                    <reportsDirectory>${sonar.junit.reportPaths}</reportsDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
