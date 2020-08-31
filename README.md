@@ -1,12 +1,15 @@
-# JetBrains [Live Templates](https://www.jetbrains.com/help/phpstorm/using-live-templates.html)
+# JetBrains [Live Templates](https://www.jetbrains.com/help/phpstorm/using-live-templates.html) for json schemas ![Project](https://github.com/shaburov/jetbrains-ide-json-schema-live-templates/workflows/Project/badge.svg?branch=master)
 Templates:
 * json-schema4json.xml (json files)
 * json-schema4yaml.xml (yaml files)
 
-Copy templates to JetBrains IDE configuration directory:    
+Copy templates to JetBrains IDE configuration directory and **restart the IDE**:    
 **Linux** `/home/<username>/.config/JetBrains/<IDE name>/templates/*`   
 **MacOS** `/Users/<username>/Library/Preferences/<IDE name>/templates/*`   
-**Windows** `???`   
+**Windows** `C:\Users\<username>\<IDE name>\templates\*`   
+
+Result:   
+![Settings.png](.indirect/Settings.png)
 
 ## Template commands   
 ### Schema file
@@ -166,7 +169,7 @@ Copy templates to JetBrains IDE configuration directory:
 
 ## Helper template
 If you need to write groovyScripts yourself, the following template may come in handy.   
-The code below escapes the **copied** groovyScript for later use in template variables.
+The code below escapes the **copied** groovyScript for later use in template variables.   
 ```
 groovyScript("def str = _1.replace(\"\\n\", \"\"); while (str.contains(\"  \")) { str = str.replace(\"  \", \" \"); }; str = str.replace(\"\\\"\", \"\\\\\\\"\"); return \"groovyScript(\\\"\"+str+\"\\\")\"", clipboard())
 ```

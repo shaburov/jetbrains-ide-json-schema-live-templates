@@ -1,0 +1,270 @@
+<templateSet group="json-schema4yaml">
+  <template name="1objectSchema" value="$schema: 'http://json-schema.org/draft-$draft$/schema#'&#10;$id: '$schema_id$'&#10;title: '$title$'&#10;description: '$description$'&#10;type: object&#10;properties:&#10;  $_1$:&#10;    $END$&#10;required:&#10;- $_1$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="draft" expression="groovyScript(&quot;return [\&quot;07\&quot;, \&quot;06\&quot;, \&quot;05\&quot;, \&quot;04\&quot;]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="schema_id" expression="groovyScript(&quot;def path = _editor.getVirtualFile().getPath().replace(_editor.getProject().getBaseDir().getPath() + '/', \&quot;\&quot;); if (path.contains(\&quot;src\&quot;)) { def index = path.indexOf(\&quot;src\&quot;); return path.substring(index + 4); } else { return path; }&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <variable name="description" expression="groovyScript(&quot;return 'TODO'&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="_1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="1ref" value="$ref: '$ref$'" description="Add ref from clipboard" toReformat="false" toShortenFQNames="true">
+    <variable name="ref" expression="clipboard()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="1integer" value="type: integer&#10;description: '$description$'&#10;minimum: $minimum$&#10;maximum: $maximum$&#10;multipleOf: $multipleOf$&#10;default: $default$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="description" expression="groovyScript(&quot;return 'TODO'&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="minimum" expression="groovyScript(&quot;return [1, 0]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="maximum" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="multipleOf" expression="groovyScript(&quot;return [1, 10, 100]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="default" expression="groovyScript(&quot;return [0, 1, 5, 10, 25, 50, 100]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="1number" value="type: number&#10;description: '$description$'&#10;minimum: $minimum$&#10;maximum: $maximum$&#10;multipleOf: $multipleOf$&#10;default: $default$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="description" expression="groovyScript(&quot;return 'TODO'&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="minimum" expression="0" defaultValue="" alwaysStopAt="true" />
+    <variable name="maximum" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="multipleOf" expression="groovyScript(&quot;return [0.1, 0.01, 0.001]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="default" expression="0" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="1string" value="type: string&#10;description: '$description$'&#10;minLength: $minLength$&#10;maxLength: $maxLength$&#10;pattern: '$pattern$'" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="description" expression="groovyScript(&quot;return 'TODO'&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="minLength" expression="groovyScript(&quot;return [0, 1]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="maxLength" expression="groovyScript(&quot;return [10, 20, 50, 100]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="pattern" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="1boolean" value="type: boolean&#10;description: '$description$'&#10;default: $default$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="description" expression="groovyScript(&quot;return 'TODO'&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="default" expression="groovyScript(&quot;return [false, true]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="1array" value="type: array&#10;description: '$description$'&#10;minItems: $minItems$&#10;maxItems: $maxItems$&#10;uniqueItems: $uniqueItems$&#10;items:&#10;  $END$&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="description" expression="groovyScript(&quot;return 'TODO'&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="minItems" expression="groovyScript(&quot;return [0, 1]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="maxItems" expression="groovyScript(&quot;return [1000, 500, 250, 100, 50, 25, 10]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="uniqueItems" expression="groovyScript(&quot;return [false, true]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="1uuidFormat" value="type: string&#10;format: 'uuid'&#10;description: '$description$'" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="description" expression="groovyScript(&quot;return 'TODO'&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="1utcMillisecFormat" value="type: number&#10;format: 'utc-millisec'&#10;description: '$description$'" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="description" expression="groovyScript(&quot;return 'TODO'&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="1arraySchema" value="$schema: 'http://json-schema.org/draft-$draft$/schema#'&#10;$id: '$schema_id$'&#10;title: '$title$'&#10;description: '$description$'&#10;type: array&#10;minItems: $minItems$&#10;maxItems: $maxItems$&#10;uniqueItems: $uniqueItems$&#10;items:&#10;  $END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="draft" expression="groovyScript(&quot;return [\&quot;07\&quot;, \&quot;06\&quot;, \&quot;05\&quot;, \&quot;04\&quot;]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="schema_id" expression="groovyScript(&quot;def path = _editor.getVirtualFile().getPath().replace(_editor.getProject().getBaseDir().getPath() + '/', \&quot;\&quot;); if (path.contains(\&quot;src\&quot;)) { def index = path.indexOf(\&quot;src\&quot;); return path.substring(index + 4); } else { return path; }&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <variable name="description" expression="groovyScript(&quot;return 'TODO'&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="minItems" expression="groovyScript(&quot;return [0, 1]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="maxItems" expression="groovyScript(&quot;return [1000, 500, 250, 100, 50, 25, 10]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="uniqueItems" expression="groovyScript(&quot;return [false, true]&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="1object" value="type: object&#10;description: '$description$'&#10;properties:&#10;  $_1$:&#10;    $END$&#10;required:&#10;- $_1$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="description" expression="groovyScript(&quot;return 'TODO'&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="_1" expression="" defaultValue="key" alwaysStopAt="true" />
+    <context>
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+</templateSet>
